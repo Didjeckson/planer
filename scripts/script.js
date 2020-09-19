@@ -73,8 +73,11 @@ todoControl.addEventListener('submit', function (event) {
 
 todoData.length = 0;
 console.log(todoData);
-json = localStorage.json;
-localStorage.clear();
-todoData.push(JSON.parse(json));
+json = JSON.parse(localStorage.json);
+// localStorage.clear();
+for (let key in json) {
+    todoData.push(json[key]);
+}
+
 
 render();
