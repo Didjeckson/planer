@@ -39,8 +39,10 @@ const render = function () {
 
         btnTodoDelete.addEventListener('click', function () {
             btnTodoDelete.parentNode.parentNode.remove();
-            todoData.splice(item);
-            return;
+            let index = todoData.indexOf(item);
+            todoData.splice(index, 1);
+            render();
+
         });
     });
 };
