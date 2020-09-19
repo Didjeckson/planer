@@ -7,6 +7,7 @@ const todoControl = document.querySelector('.todo-control'),
 const todoData = [];
 
 const render = function () {
+
     todoList.textContent = '';
     todoCompleted.textContent = '';
 
@@ -40,6 +41,10 @@ const render = function () {
 
 todoControl.addEventListener('submit', function (event) {
     event.preventDefault();
+
+    if (headerInput.value === '') {
+        return;
+    }
 
     const newTodo = {
         value: headerInput.value,
