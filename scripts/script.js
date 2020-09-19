@@ -53,6 +53,8 @@ todoControl.addEventListener('submit', function (event) {
 
     todoData.push(newTodo);
 
+    headerInput.value = '';
+
     render();
 });
 
