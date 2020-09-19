@@ -35,6 +35,13 @@ const render = function () {
             render();
         });
 
+        const btnTodoDelete = li.querySelector('.todo-remove');
+
+        btnTodoDelete.addEventListener('click', function () {
+            btnTodoDelete.parentNode.parentNode.remove();
+            todoData.splice(item);
+            return;
+        });
     });
 };
 
@@ -54,7 +61,7 @@ todoControl.addEventListener('submit', function (event) {
     todoData.push(newTodo);
 
     headerInput.value = '';
-
+    console.log(todoData);
     render();
 });
 
