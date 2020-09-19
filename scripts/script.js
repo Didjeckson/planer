@@ -5,6 +5,7 @@ const todoControl = document.querySelector('.todo-control'),
     todoCompleted = document.querySelector('.todo-completed');
 
 const todoData = [];
+let json;
 
 const render = function () {
 
@@ -45,6 +46,9 @@ const render = function () {
 
         });
     });
+
+    json = JSON.stringify(todoData);
+    localStorage.json = json;
 };
 
 
@@ -66,5 +70,11 @@ todoControl.addEventListener('submit', function (event) {
     console.log(todoData);
     render();
 });
+
+todoData.length = 0;
+console.log(todoData);
+json = localStorage.json;
+localStorage.clear();
+todoData.push(JSON.parse(json));
 
 render();
